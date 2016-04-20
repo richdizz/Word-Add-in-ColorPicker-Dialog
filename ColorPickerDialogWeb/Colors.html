@@ -1,0 +1,68 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+    <meta charset="utf-8" />
+    <script src="Scripts/jquery-1.9.1.js" type="text/javascript"></script>
+    <script src="//appsforoffice.microsoft.com/lib/beta/hosted/office.js"></script>
+    <script type="text/javascript">
+        Office.initialize = function (reason) {
+            $(document).ready(function () {
+
+            });
+        };
+
+        function pick(color) {
+            var response = { "status": "success", "color": color };
+            Office.context.ui.messageParent(JSON.stringify(response));
+        };
+    </script>
+    <style type="text/css">
+        .red {
+            position: absolute;
+            background: red;
+            left: 0px;
+            right: 50%;
+            top: 0px;
+            bottom: 50%;
+            cursor: pointer;
+        }
+
+        .blue {
+            position: absolute;
+            background: blue;
+            left: 50%;
+            right: 0px;
+            top: 0px;
+            bottom: 50%;
+            cursor: pointer;
+        }
+
+        .green {
+            position: absolute;
+            background: green;
+            left: 0px;
+            right: 50%;
+            top: 50%;
+            bottom: 0px;
+            cursor: pointer;
+        }
+
+        .yellow {
+            position: absolute;
+            background: yellow;
+            left: 50%;
+            right: 0px;
+            top: 50%;
+            bottom: 0px;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body>
+    <div class="red" onclick="pick('red');"></div>
+    <div class="blue" onclick="pick('blue');"></div>
+    <div class="green" onclick="pick('green');"></div>
+    <div class="yellow" onclick="pick('yellow');"></div>
+</body>
+</html>
